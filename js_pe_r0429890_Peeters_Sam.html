@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>PE opdracht: Sam Peeters</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+      <main class="container">
+      <h1>Registreer</h1>
+      <p class="lead">Meld je aan op </p>
+      <div class="row">
+          <div class="col-md-7">
+            <form id="form">
+              <div class="mb-3">
+                <label for="Naam" class="form-label">Naam</label>
+                <input type="text" class="form-control" id="naam" >                  
+              </div>
+              <div class="mb-3">
+                <label for="Voornaam" class="form-label">Voornaam</label>
+                <input type="text" class="form-control" id="voornaam" >                  
+              </div>             
+              <div class="mb-3">
+                <label for="Adres" class="form-label">Adres</label>
+                <select class="form-select" aria-label="Adres" id = "adres">
+                  <option selected>adres</option>
+                  <option value="1">Geel</option>
+                  <option value="2">Herentals</option>
+                  <option value="3">Lier</option>
+                </select>                  
+              </div>
+              <div class="mb-3">
+                <label for="Provincie" class="form-label">Provincie</label>
+                <select class="form-select" aria-label="Provincie" id = "provincie">
+                  <option selected>Provincie</option>
+                  <option value="1">Antwerpen</option>
+                  <option value="2">Limburg</option>
+                  <option value="3">Vlaams Brabant</option>
+                </select>                  
+              </div>
+              <div class="mb-3">
+                <label for="Postcode">Postcode</label>
+                <input type="number" id="postcode" name="postcode" min="1000" max="9999">                       
+              </div>
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id = "user">
+              </div>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="email" aria-describedby="emailHelp">                  
+                </div>
+                <div class="mb-3">
+                  <label for="psw">Paswoord</label>
+                  <input type="password" id="psw" name="psw" minlength="7" title="Moet minstens 7 tekens bevatten" >
+                </div>
+                <div class="mb-3">
+                  <label for="psw">Herhaal paswoord</label>
+                  <input type="password" id="herhaalpsw" name="herhaalpsw" >
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="algemeneVoorwaarden">
+                  <label class="form-check-label" for="exampleCheck1">algemene voorwaarden</label>
+                </div>
+                
+               
+
+                <form>
+                  <h3>Betaling</h3>
+                  <input type="radio" id="Banking" name="betaling" value="bank">
+                  <label for="Banking">Banking app</label><br>
+                  <input type="radio" id="Overschrijving" name="betaling" value="Overschrijving">
+                  <label for="overschrijving">Overschrijving</label><br>
+                  <input type="radio" id="Visa" name="betaling" value="Visa">
+                  <label for="Visa">Visa card</label><br>
+                  <input type="radio" id="Paypal" name="betaling" value="Paypal">
+                  <label for="Paypal">Paypal</label>
+                </form>
+                <button type="submit" class="btn btn-primary" onclick="validateForm()">Registreer</button>
+                
+            </form>
+
+          </div>
+          <div class="col-md-5" >
+            <div class="alert alert-succes" role="alert">
+              Geslaagd!
+            </div>
+            <div class="alert alert-danger" role="alert" id ="resultaat">
+              <h4>error</h4> 
+            </div>
+            <div class="alert alert-info" role="alert">
+              betaling via
+            </div>
+            
+              
+        </div>
+      </div>
+      </main>
+      <script>
+
+       
+
+
+
+
+        let password = document.getElementById("psw")
+  , confirm_password = document.getElementById("herhaalpsw");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Je paswoorden zijn niet identiek");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+//https://codepen.io/diegoleme/pen/surIK
+
+
+
+
+        function validateForm() {
+       
+          let naam = document.getElementById("naam");
+        let adres = document.getElementById("adres");
+        let provincie = document.getElementById("provincie");
+        let postcode = document.getElementById("postcode");
+        let Username = document.getElementById("user");
+        let paswoord = document.getElementById("psw");
+        let herhaalpsw = document.getElementById("herhaalpsw");
+        let form = document.getElementById("form");
+        let resultaat = document.getElementById("resultaat");
+
+        form.addEventListener('submit', (e) =>{
+          let melding=[] 
+          if (naam.val===""){
+            melding.push("naam moet ingevuld zijn")
+          }
+          if(voornaam.value===""){
+            melding.push("Voornaam moet ingegeven zijn")
+          }
+          if(postcode.value>1000){
+            melding.push("postcode moet minstens 1000 zijn")
+          }
+          if(postcode.value<9999){
+            melding.push("postcode kan max 9999 zijn")
+          }
+          if(paswoord!=herhaalpsw){
+            melding.push("Je moet 2 keer hetzelfde paswoord ingeven")
+          }
+          if (paswoord ===""){
+            melding.push("paswoord moet ingegeven zijn")
+          }
+
+        
+          if(melding.length > 0) {
+            e.preventDefault()
+            resultaat.innerText=melding.join('<br>')
+          }
+          document.getElementById("resultaat").innerHTML=resultaat;
+
+        })
+    }
+          
+        
+          
+
+         
+
+          function checkEmptyField(veld, melding){
+            if(veld==""){
+              melding=" is een verplicht veld!";
+              resultaat += melding
+            }
+          }
+
+          
+        
+
+        
+
+
+
+
+        
+
+
+
+
+  
+
+  
+
+
+
+      </script>
+
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
+    
+  </body>
+</html>
